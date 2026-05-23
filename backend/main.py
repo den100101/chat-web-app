@@ -26,7 +26,7 @@ app.secret_key = 'fb5421bfecc40ab63d7f7bea4daa047decf796e4c7426760976a3acd1c5065
 
 app.config.update(
     SESSION_COOKIE_SAMESITE="Lax",
-    SESSION_COOKIE_SECURE=False,
+    SESSION_COOKIE_SECURE=True,
     SESSION_COOKIE_HTTPONLY=True
 )
 
