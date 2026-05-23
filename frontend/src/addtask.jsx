@@ -23,7 +23,7 @@ function NewTask({ closeModal, refreshTasks }) {
     };
 
     try {
-      const response = await fetch("http://fabioss.onrender.com/add_tasks", {
+      const response = await fetch("http://fabioscake.onrender.com/add_tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
