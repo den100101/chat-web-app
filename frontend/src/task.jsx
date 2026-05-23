@@ -14,7 +14,7 @@ function Task() {
 
   async function fetchTasks() {
     try {
-      const response = await fetch("http://fabioss.onrender.com/get_tasks");
+      const response = await fetch("http://fabioscake.onrender.com/get_tasks");
       const data = await response.json();
       setTasks(data);
     } catch (error) {
@@ -28,7 +28,7 @@ function Task() {
 
   async function handleDelete(id) {
     try {
-      const response = await fetch(`http://fabioss.onrender.com/delete_tasks/${id}`, {
+      const response = await fetch(`http://fabioscake.onrender.com/delete_tasks/${id}`, {
         method: "DELETE",
       });
 
@@ -48,7 +48,7 @@ function Task() {
   async function handleComplete(id) {
     try {
       const response = await fetch(
-        `http://localhost:5000/completed_tasks/${id}`,
+        `http://fabioscake.onrender.com/completed_tasks/${id}`,
         { method: "PATCH" },
       );
 
