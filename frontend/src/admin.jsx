@@ -13,7 +13,7 @@ function AdminPanel() {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:5000/logout", {
+      await fetch("http://fabioss.onrender.com/logout", {
         method: "POST",
         credentials: "include",
       });
