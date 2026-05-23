@@ -12,7 +12,7 @@ function ConversationBox({ setshowConvo }) {
   const fileInputRef = useRef(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/get_me", {
+    fetch("http://fabioss.onrender.com/get_me", {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -22,7 +22,7 @@ function ConversationBox({ setshowConvo }) {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/get_users", {
+    fetch("http://fabioss.onrender.com/get_users", {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -40,7 +40,7 @@ function ConversationBox({ setshowConvo }) {
   useEffect(() => {
     if (!adminId) return;
 
-    fetch(`http://localhost:5000/get_messages/${adminId}`, {
+    fetch(`http://fabioss.onrender.com/get_messages/${adminId}`, {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -99,7 +99,7 @@ function ConversationBox({ setshowConvo }) {
       formData.append("image", image);
       formData.append("receiver_id", adminId);
 
-      await fetch("http://localhost:5000/send_image", {
+      await fetch("http://fabioss.onrender.com/send_image", {
         method: "POST",
         body: formData,
         credentials: "include",
