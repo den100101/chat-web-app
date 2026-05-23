@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://fabioss.onrender.com/check_session", {
+    fetch("http://fabioscake.onrender.com/check_session", {
       credentials: "include",
     })
       .then((res) => res.json())
