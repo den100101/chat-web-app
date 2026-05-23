@@ -12,7 +12,7 @@ function ConversationBox({ setshowConvo }) {
   const fileInputRef = useRef(null);
 
   useEffect(() => {
-    fetch("http://fabioss.onrender.com/get_me", {
+    fetch("http://fabioscake.onrender.com/get_me", {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -40,7 +40,7 @@ function ConversationBox({ setshowConvo }) {
   useEffect(() => {
     if (!adminId) return;
 
-    fetch(`http://fabioss.onrender.com/get_messages/${adminId}`, {
+    fetch(`http://fabioscake.onrender.com/get_messages/${adminId}`, {
       credentials: "include",
     })
       .then((res) => res.json())
