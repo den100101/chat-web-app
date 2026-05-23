@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const socket = io("http://fabioss.onrender.com", {
+const socket = io("http://fabioscake.onrender.com/", {
   withCredentials: true,
   transports: ["polling"],
 });
