@@ -521,7 +521,13 @@ def uploaded_file(filename):
 
 @app.route("/test-db")
 def test_db():
-    return {"status": "ok"}
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT 1")
+    result = cursor.fetchone()
+    conn.close()
+    
+    return {"db": result}
 
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000)
