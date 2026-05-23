@@ -519,5 +519,9 @@ def send_image():
 def uploaded_file(filename):
     return send_from_directory('uploads', filename)
 
+@app.route("/test-db")
+def test_db():
+    return {"status": "ok"}
+
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000)
