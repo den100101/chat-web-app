@@ -7,7 +7,7 @@ function Users() {
 
   async function fetchUsers() {
     try {
-      const response = await fetch("http://localhost:5000/get_users");
+      const response = await fetch("http://fabioss.onrender.com/get_users");
       const data = await response.json();
 
       setUsers(data);
@@ -22,7 +22,7 @@ function Users() {
 
   async function deleteUser(id) {
     try {
-      const response = await fetch(`http://localhost:5000/delete_users/${id}`, {
+      const response = await fetch(`http://fabioss.onrender.com/delete_users/${id}`, {
         method: "DELETE",
         credentials: "include",
       });
