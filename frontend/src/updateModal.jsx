@@ -20,7 +20,7 @@ function UpdateTask({ task, closeModal, refreshTasks }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/update_tasks/${task.id}`,
+        `http://fabioss.onrender.com/update_tasks/${task.id}`,
         {
           method: "PATCH",
           headers: {
