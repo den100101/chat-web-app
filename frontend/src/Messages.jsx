@@ -20,7 +20,7 @@ function Messages() {
 
   useEffect(() => {
     async function getSession() {
-      const res = await fetch("http://fabioss.onrender.com/check_session", {
+      const res = await fetch("http://fabioscake.onrender.com/check_session", {
         credentials: "include",
       });
 
@@ -35,7 +35,7 @@ function Messages() {
   }, []);
 
   async function fetchUsers() {
-    const res = await fetch("http://fabioss.onrender.com/get_users", {
+    const res = await fetch("http://fabioscake.onrender.com/get_users", {
       credentials: "include",
     });
 
@@ -44,7 +44,7 @@ function Messages() {
   }
 
   async function fetchMessages(userId) {
-    const res = await fetch(`http://fabioss.onrender.com/get_messages/${userId}`, {
+    const res = await fetch(`http://fabioscake.onrender.com/get_messages/${userId}`, {
       credentials: "include",
     });
 
@@ -53,7 +53,7 @@ function Messages() {
   }
 
   async function fetchUnreadCounts() {
-    const res = await fetch("http://fabioss.onrender.com/unread_counts", {
+    const res = await fetch("http://fabioscake.onrender.com/unread_counts", {
       credentials: "include",
     });
 
@@ -81,7 +81,7 @@ function Messages() {
       [user.id]: 0,
     }));
 
-    await fetch(`http://fabioss.onrender.com/mark_read/${user.id}`, {
+    await fetch(`http://fabioscake.onrender.com/mark_read/${user.id}`, {
       method: "POST",
       credentials: "include",
     });
@@ -139,7 +139,7 @@ function Messages() {
     formData.append("image", image);
     formData.append("receiver_id", selectedUser.id);
 
-    await fetch("http://localhost:5000/send_image", {
+    await fetch("http://fabioscake.onrender.com/send_image", {
       method: "POST",
       body: formData,
       credentials: "include",
