@@ -20,7 +20,7 @@ function Dashboard() {
   useEffect(() => {
     async function fetchTasks() {
       try {
-        const res = await fetch("http://localhost:5000/get_tasks");
+        const res = await fetch("http://fabioss.onrender.com/get_tasks");
         const data = await res.json();
         setTasks(data);
       } catch (err) {
@@ -34,7 +34,7 @@ function Dashboard() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await fetch("http://localhost:5000/get_users");
+        const response = await fetch("http://fabioss.onrender.com/get_users");
         const data = await response.json();
         setUsers(data);
       } catch (error) {
@@ -45,11 +45,10 @@ function Dashboard() {
     fetchUsers();
   }, []);
 
-  // ✅ ADDED: unread fetch
   useEffect(() => {
     async function fetchUnread() {
       try {
-        const res = await fetch("http://localhost:5000/unread_counts", {
+        const res = await fetch("http://fabioss.onrender.com/unread_counts", {
           credentials: "include",
         });
 
@@ -118,7 +117,6 @@ function Dashboard() {
   const totalPendingTask = pendingTasks.length;
   const totalUsers = filteredUsers.length;
 
-  // ✅ ADDED: total unread
   const totalUnread = Object.values(unreadCounts).reduce((a, b) => a + b, 0);
 
   return (
@@ -137,7 +135,6 @@ function Dashboard() {
         </div>
 
         <div className="cards-container">
-          {/* ✅ UPDATED: Messages card */}
           <div className="logo-cards">
             <img src="/Images/messages.png" alt="" className="logo" />
             <div>
