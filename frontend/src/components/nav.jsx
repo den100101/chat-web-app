@@ -12,7 +12,7 @@ function Navigation({ isLoggedin, setisLoggedin }) {
   async function handleLogout(e) {
     e.preventDefault();
 
-    const response = await fetch("http://fabioss.onrender.com/logout", {
+    const response = await fetch("http://fabioscake.onrender.com/logout", {
       method: "POST",
       credentials: "include",
     });
