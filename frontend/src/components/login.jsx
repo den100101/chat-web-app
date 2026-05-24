@@ -7,6 +7,7 @@ function ModalLogin({
   modalType,
   setModalType,
   closeModal,
+  // eslint-disable-next-line no-unused-vars
   isLoggedin,
   setisLoggedin,
 }) {
@@ -27,7 +28,7 @@ function ModalLogin({
     const data = { Username, Password };
 
     try {
-      const response = await fetch("${import.meta.env.API_URL}/login", {
+      const response = await fetch(`${import.meta.env.API_URL}/login`, {
         method: "POST",
         credentials: "include",
         headers: {
