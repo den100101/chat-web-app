@@ -11,14 +11,14 @@ app = Flask(__name__)
 CORS(
     app,
     supports_credentials=True,
-    origins=["https://fabioscakeandpastries-xzgc.onrender.com/"],
+    origins=[os.getenv("FRONTEND_URL")],
     allow_headers=["Content-Type", "Authorization"],
     methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
 )
 
 socketio = SocketIO(
     app,
-    cors_allowed_origins="http://localhost:5173",
+    cors_allowed_origins=os.getenv("FRONTEND_URL"),
     manage_session=False
 )
 
