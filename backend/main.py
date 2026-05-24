@@ -26,7 +26,7 @@ socketio = SocketIO(
 app.secret_key = 'fb5421bfecc40ab63d7f7bea4daa047decf796e4c7426760976a3acd1c5065b3'
 
 app.config.update(
-    SESSION_COOKIE_SAMESITE="Lax",
+    SESSION_COOKIE_SAMESITE="None",
     SESSION_COOKIE_SECURE=True,
     SESSION_COOKIE_HTTPONLY=True
 )
@@ -298,7 +298,7 @@ def delete_task(user_id):
 
 
 @app.route('/completed_tasks/<int:task_id>', methods=['PATCH', 'OPTIONS'])
-@cross_origin(origins="http://localhost:5173", supports_credentials=True)
+@cross_origin(origins=os.getenv("FRONTEND_URL"), supports_credentials=True)
 def completed_task(task_id):
     print("PATCH HIT:", task_id)
 
