@@ -20,7 +20,7 @@ function Messages() {
 
   useEffect(() => {
     async function getSession() {
-      const res = await fetch(`${import.meta.env.API_URL}/check_session`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/check_session`, {
         credentials: "include",
       });
 
@@ -35,7 +35,7 @@ function Messages() {
   }, []);
 
   async function fetchUsers() {
-    const res = await fetch(`${import.meta.env.API_URL}/get_users`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/get_users`, {
       credentials: "include",
     });
 
@@ -44,7 +44,7 @@ function Messages() {
   }
 
   async function fetchMessages(userId) {
-    const res = await fetch(`${import.meta.env.API_URL}/get_messages/${userId}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/get_messages/${userId}`, {
       credentials: "include",
     });
 
@@ -53,7 +53,7 @@ function Messages() {
   }
 
   async function fetchUnreadCounts() {
-    const res = await fetch(`${import.meta.env.API_URL}/unread_counts`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/unread_counts`, {
       credentials: "include",
     });
 
@@ -82,7 +82,7 @@ function Messages() {
       [user.id]: 0,
     }));
 
-    await fetch(`${import.meta.env.API_URL}/mark_read/${user.id}`, {
+    await fetch(`${import.meta.env.VITE_API_URL}/mark_read/${user.id}`, {
       method: "POST",
       credentials: "include",
     });
@@ -140,7 +140,7 @@ function Messages() {
     formData.append("image", image);
     formData.append("receiver_id", selectedUser.id);
 
-    await fetch(`${import.meta.env.API_URL}/send_image`, {
+    await fetch(`${import.meta.env.VITE_API_URL}/send_image`, {
       method: "POST",
       body: formData,
       credentials: "include",
@@ -210,7 +210,7 @@ function Messages() {
                   >
                     {msg.type === "image" ? (
                       <img
-                        src={`${import.meta.env.API_URL}/uploads/${msg.content}`}
+                        src={`${import.meta.env.VITE_API_URL}/uploads/${msg.content}`}
                         alt="chat"
                         style={{
                           maxWidth: "200px",
@@ -219,7 +219,7 @@ function Messages() {
                         }}
                         onClick={() =>
                           setSelectedImage(
-                            `${import.meta.env.API_URL}/uploads/${msg.content}`,
+                            `${import.meta.env.VITE_API_URL}/uploads/${msg.content}`,
                           )
                         }
                       />

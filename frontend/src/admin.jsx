@@ -13,7 +13,7 @@ function AdminPanel() {
 
   const handleLogout = async () => {
     try {
-      await fetch(`${import.meta.env.API_URL}/logout`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/logout`, {
         method: "POST",
         credentials: "include",
       });

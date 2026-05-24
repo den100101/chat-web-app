@@ -20,7 +20,7 @@ function UpdateTask({ task, closeModal, refreshTasks }) {
 
     try {
       const response = await fetch(
-        `${import.meta.env.API_URL}/update_tasks/${task.id}`,
+        `${import.meta.env.VITE_API_URL}/update_tasks/${task.id}`,
         {
           method: "PATCH",
           headers: {

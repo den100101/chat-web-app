@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.API_URL}/check_session`, {
+    fetch(`${import.meta.env.VITE_API_URL}/check_session`, {
       credentials: "include",
     })
       .then((res) => res.json())

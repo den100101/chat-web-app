@@ -12,7 +12,7 @@ function Navigation({ isLoggedin, setisLoggedin }) {
   async function handleLogout(e) {
     e.preventDefault();
 
-    const response = await fetch("${import.meta.env.API_URL}/logout", {
+    const response = await fetch("${import.meta.env.VITE_API_URL}/logout", {
       method: "POST",
       credentials: "include",
     });

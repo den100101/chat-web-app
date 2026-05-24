@@ -14,7 +14,7 @@ function Task() {
 
   async function fetchTasks() {
     try {
-      const response = await fetch(`${import.meta.env.API_URL}/get_tasks`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/get_tasks`);
       const data = await response.json();
       setTasks(data);
     } catch (error) {
@@ -29,7 +29,7 @@ function Task() {
 
   async function handleDelete(id) {
     try {
-      const response = await fetch(`${import.meta.env.API_URL}/delete_tasks/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/delete_tasks/${id}`, {
         method: "DELETE",
       });
 
@@ -49,7 +49,7 @@ function Task() {
   async function handleComplete(id) {
     try {
       const response = await fetch(
-        `${import.meta.env.API_URL}/completed_tasks/${id}`,
+        `${import.meta.env.VITE_API_URL}/completed_tasks/${id}`,
         { method: "PATCH" },
       );
 

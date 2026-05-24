@@ -7,7 +7,7 @@ function Users() {
 
   async function fetchUsers() {
     try {
-      const response = await fetch(`${import.meta.env.API_URL}/get_users`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/get_users`);
       const data = await response.json();
 
       setUsers(data);
@@ -23,7 +23,7 @@ function Users() {
 
   async function deleteUser(id) {
     try {
-      const response = await fetch(`${import.meta.env.API_URL}/delete_users/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/delete_users/${id}`, {
         method: "DELETE",
         credentials: "include",
       });

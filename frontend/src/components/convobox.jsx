@@ -12,7 +12,7 @@ function ConversationBox({ setshowConvo }) {
   const fileInputRef = useRef(null);
 
   useEffect(() => {
-    fetch("${import.meta.env.API_URL}/get_me", {
+    fetch("${import.meta.env.VITE_API_URL}/get_me", {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -40,7 +40,7 @@ function ConversationBox({ setshowConvo }) {
   useEffect(() => {
     if (!adminId) return;
 
-    fetch(`${import.meta.env.API_URL}/get_messages/${adminId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/get_messages/${adminId}`, {
       credentials: "include",
     })
       .then((res) => res.json())
