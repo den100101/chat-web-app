@@ -13,7 +13,7 @@ function AdminPanel() {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://fabioscake.onrender.com/logout", {
+      await fetch(`${import.meta.env.API_URL}/logout`, {
         method: "POST",
         credentials: "include",
       });

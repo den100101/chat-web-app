@@ -11,7 +11,7 @@ function CAModalLogin({ setModalType, closeModal }) {
 
     const data = { Email, Username, Password };
 
-    const response = await fetch("http://fabioscake.onrender.com/add_user", {
+    const response = await fetch("${import.meta.env.API_URL}/add_user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -20,7 +20,7 @@ function UpdateTask({ task, closeModal, refreshTasks }) {
 
     try {
       const response = await fetch(
-        `http://fabioscake.onrender.com/update_tasks/${task.id}`,
+        `${import.meta.env.API_URL}/update_tasks/${task.id}`,
         {
           method: "PATCH",
           headers: {

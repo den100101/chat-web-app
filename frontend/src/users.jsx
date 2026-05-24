@@ -7,7 +7,7 @@ function Users() {
 
   async function fetchUsers() {
     try {
-      const response = await fetch("http://fabioscake.onrender.com/get_users");
+      const response = await fetch(`${import.meta.env.API_URL}/get_users`);
       const data = await response.json();
 
       setUsers(data);
@@ -17,12 +17,13 @@ function Users() {
   }
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchUsers();
   }, []);
 
   async function deleteUser(id) {
     try {
-      const response = await fetch(`http://fabioscake.onrender.com/delete_users/${id}`, {
+      const response = await fetch(`${import.meta.env.API_URL}/delete_users/${id}`, {
         method: "DELETE",
         credentials: "include",
       });

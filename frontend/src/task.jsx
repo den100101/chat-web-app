@@ -14,7 +14,7 @@ function Task() {
 
   async function fetchTasks() {
     try {
-      const response = await fetch("http://fabioscake.onrender.com/get_tasks");
+      const response = await fetch(`${import.meta.env.API_URL}/get_tasks`);
       const data = await response.json();
       setTasks(data);
     } catch (error) {
@@ -23,12 +23,13 @@ function Task() {
   }
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchTasks();
   }, []);
 
   async function handleDelete(id) {
     try {
-      const response = await fetch(`http://fabioscake.onrender.com/delete_tasks/${id}`, {
+      const response = await fetch(`${import.meta.env.API_URL}/delete_tasks/${id}`, {
         method: "DELETE",
       });
 
@@ -48,7 +49,7 @@ function Task() {
   async function handleComplete(id) {
     try {
       const response = await fetch(
-        `http://fabioscake.onrender.com/completed_tasks/${id}`,
+        `${import.meta.env.API_URL}/completed_tasks/${id}`,
         { method: "PATCH" },
       );
 

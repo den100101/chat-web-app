@@ -20,7 +20,7 @@ function Dashboard() {
   useEffect(() => {
     async function fetchTasks() {
       try {
-        const res = await fetch("http://fabioscake.onrender.com/get_tasks");
+        const res = await fetch(`${import.meta.env.API_URL}/get_tasks`);
         const data = await res.json();
         setTasks(data);
       } catch (err) {
@@ -34,7 +34,7 @@ function Dashboard() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await fetch("http://fabioscake.onrender.com/get_users");
+        const response = await fetch(`${import.meta.env.API_URL}/get_users`);
         const data = await response.json();
         setUsers(data);
       } catch (error) {
@@ -48,7 +48,7 @@ function Dashboard() {
   useEffect(() => {
     async function fetchUnread() {
       try {
-        const res = await fetch("http://fabioscake.onrender.com/unread_counts", {
+        const res = await fetch(`${import.meta.env.API_URL}/unread_counts`, {
           credentials: "include",
         });
 
@@ -100,6 +100,7 @@ function Dashboard() {
       monthly[monthIndex].orders += 1;
     });
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setChartData(monthly);
   }, [tasks]);
 
