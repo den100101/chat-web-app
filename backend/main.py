@@ -54,8 +54,9 @@ def new_user():
         conn.commit()
         return jsonify({'message': 'User created'}), 201
 
-    except Exception:
-        return jsonify({'error': 'Server error'}), 500
+    except Exception as e:
+        print("ADD USER ERROR:", e)
+        return jsonify({'error': str(e)}), 500
 
     finally:
         try:
