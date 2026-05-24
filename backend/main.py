@@ -5,6 +5,7 @@ from flask_cors import CORS, cross_origin
 from config import get_connection
 from models import User, Message, Task
 from flask_socketio import SocketIO, emit, join_room
+import os
 
 app = Flask(__name__)
 
